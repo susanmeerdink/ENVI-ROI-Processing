@@ -10,9 +10,9 @@
 # 2. Output file name
 
 # ############INPUTS######################################
-OrigROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs\\2016_08_04_ROIs_output.txt'
+OrigROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs_of_Potential\\2016_08_22_ROIs_potential.txt'
 
-OutputROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs\\2016_08_04_ROIs_output_OUTPUT.csv'
+OutputROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs_of_Potential\\2016_08_22_ROIs_potential_OUTPUT.csv'
 
 ############ENDINPUTS####################################
 
@@ -28,7 +28,7 @@ k = 0 #Use this to loop through polygon list
 
 #line = inputFile.readline() #Sets the inital line to be read in
 for line in inputFile:
-    print(line)
+    #print(line)
     if ';' in line: #Pull out header info
         #Finding and storing polygon name
         bottomPoly = line.find('name:')
