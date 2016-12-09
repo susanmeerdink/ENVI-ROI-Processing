@@ -10,16 +10,16 @@
 # 2. Output file name
 
 # ############INPUTS######################################
-OrigROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs_of_Potential\\2016_08_22_ROIs_potential.txt'
+OrigROI = 'F:\\Dropbox\\Analysis\\JPL Analysis\\HyTES spectra\\RAW Output from ROIs - Temp GeoRef Image\\TITI_temp_georef.txt'
 
-OutputROI = 'F:\\Dropbox\\Field Work\\JPL Field Work\\JPL Field Work Data\\ROIs_of_Potential\\2016_08_22_ROIs_potential_OUTPUT.csv'
+OutputROI = 'F:\\Dropbox\\Analysis\\JPL Analysis\\HyTES spectra\\FORMATTED Output from ROIs - Temp GeoRef Image\\TITI_temp_georef.csv'
 
 ############ENDINPUTS####################################
 
 import numpy as np
 
 outputFile = open(OutputROI,'w') #Create the output file for the formatted ROIs
-inputFile = open(OrigROI,'r') #Open the original ROI file (not formatted but with semi colon added to end)
+inputFile = open(OrigROI,'r') #Open the original ROI file 
 
 ## Read through top portion of ENVI Metadata to pull out Name, Number of points, and header
 polygonIDList = [] #Will hold the polygon list
@@ -45,7 +45,7 @@ for line in inputFile:
             ptList.append(pt)
 
         #Finding and Writing header for output file
-        header = line.find('ID')
+        header = line.find(' ID ')
         if header > -1:
             headerLine = line.split('  ')
             headerLineIn = [x for x in headerLine if x]
